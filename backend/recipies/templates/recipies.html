@@ -1,0 +1,33 @@
+{% extends 'flatpages/default.html' %} 
+
+ 
+{% block title %}
+Recipies
+{% endblock title %}
+ 
+{% block content %}
+    <h1>Рецепты</h1>
+    {% if recipies %}
+        <table>
+            <tr>
+                <td>Название</td>
+                <td>Описание</td>
+                <td>Категория</td>
+                <td>Изображение</td>
+            </tr>
+        {% for recipy in recipies %}
+            <tr>
+                <td>
+                    <a href="{% url 'recipy' recipy.id %}">{{ recipy.title }}</a>
+                </td>
+                <td>{{ recipy.description|truncatechars:20 }}</td>
+                <td>{{ recipy.category }}</td>
+                <td>{{ recipy.image }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h2>Пока что нет новых рецептов</h2>
+    {% endif %}
+
+{% endblock content %}
