@@ -3,4 +3,4 @@ django_flatpage,
 django_filters,
 rest_framework,
 coreapi,
-corsheaders
+django-cors-headers
