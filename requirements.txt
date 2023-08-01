@@ -1,6 +1,2 @@
-django,
-django_flatpage,
-django_filters,
-rest_framework,
 coreapi,
 django-cors-headers
